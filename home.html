@@ -1,90 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <!-- Required meta tags always come first -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Eflatmus - Flats for Students</title>
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400i" rel="stylesheet">
-        <!-- Custom CSS -->
-        <style media="screen">
-            * {
-                -webkit-border-radius: 0 !important;
-                -moz-border-radius: 0 !important;
-                border-radius: 0 !important;
-            }
-            body {
-                /* photo from unsplash */
-                background: url("static/bg-main-min.jpg") no-repeat center center fixed;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-            }
-            #navbar-custom {
-                background: #f9fc5a;
-            }
-            #title {
-                font-family: 'Roboto', sans-serif;
-                font-weight:300;
-                text-align: center;
-            }
-            .title-small {
-                font-size: 3em;
-                color: white;
-            }
-            .title-big {
-                font-size: 6em;
-                color: white;
-            }
-            #title-jumbotron {
-                background: rgba(255, 255, 255, 0);
-            }
-            #title-info {
-                font-family: 'Roboto', sans-serif;
-                font-weight: 400;
-                font-style: italic;
-                background: yellow;
-                /* to center the div */
-                width: 45%;
-                margin: 0 auto;
-                /* center the text */
-                text-align: center;
-            }
-            #button-join {
-                margin-right: 1em;
-            }
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Eflatmus - Flats for Students</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400i" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style media="screen">
+        * {
+            -webkit-border-radius: 0 !important;
+            -moz-border-radius: 0 !important;
+            border-radius: 0 !important;
+        }
 
-        </style>
-    </head>
+        body {
+            /* photo from unsplash */
+            background: url("static/bg-main-min.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
 
-    <body>
-        <nav id="navbar-custom" class="navbar navbar-dark bg-inverse navbar-static-top">
-            <a class="navbar-brand" href="#">Eflatmus</a>
-            <a id="buton-join" class="btn btn-outline-success float-xs-right" href="suscribe.html">Join the club</a>
-        </nav>
-        <div class="container">
-            <div id="title-jumbotron" class="jumbotron" style="margin-top:10%;">
-                <h1 id="" class="title-small hidden-sm-up" style="text-align:center;">Eflatmus</h1>
-                <h1 id="" class="title-big hidden-xs-down" style="text-align:center;">Eflatmus</h1>
-                <div id="title-info">
-                    <p>
-                        We empower students to find great, affordable, flats in Spain
-                    </p>
+        #navbar-custom {
+            background: #f9fc5a;
+        }
+
+        #title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .title-small {
+            font-size: 3em;
+            color: white;
+        }
+
+        .title-big {
+            font-size: 6em;
+            color: white;
+        }
+
+        #title-jumbotron {
+            background: rgba(255, 255, 255, 0);
+        }
+
+        #title-info {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-style: italic;
+            background: yellow;
+            /* to center the div */
+            width: 45%;
+            margin: 0 auto;
+            /* center the text */
+            text-align: center;
+        }
+
+        #button-join {
+            transition: background .75s ease-in-out;
+            -moz-transition: background .75s ease-in-out;
+            -webkit-transition: background .75s ease-in-out;
+        }
+
+        #button-flats {
+            margin-right: 1em;
+        }
+
+        .active {
+            color: #5cb85c;
+            background-image: none;
+            background-color: transparent;
+            border-color: #5cb85c;
+            opacity: 1;
+            transition: opacity 1s;
+        }
+
+        #margin {
+            margin-left: 20%;
+            margin-right: 10%;
+        }
+    </style>
+</head>
+
+<body onload="flashy();">
+    <nav id="navbar-custom" class="navbar navbar-dark bg-inverse navbar-static-top">
+        <a class="navbar-brand" href="#">Eflatmus</a>
+        <a id="button-join" class="btn btn-outline-success float-xs-right" href="suscribe.html">Join the club!</a>
+    </nav>
+    <div class="container">
+        <div id="title-jumbotron" class="jumbotron" style="margin-top:10%;">
+            <h1 class="title-small hidden-sm-up" style="text-align:center;">Eflatmus</h1>
+            <h1 class="title-big hidden-xs-down" style="text-align:center;">Eflatmus</h1>
+            <div id="title-info">
+                <p>
+                    Start a new chapter... Live your Erasmus in Spain
+                </p>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <form id="margin" class="form-group row" action="cribs.html" method="post">
+                        <div class="col-xs-10">
+                            <input type="text" name="query" class="form-control" placeholder="Find cities here!" id="search-input">
+                        </div>
+                        <div class="col-xs-2">
+                            <button type="submit" class="btn btn-success" id="search-button" >Go!</button>
+                        </div>
+                    </form>
                 </div>
+
             </div>
 
         </div>
 
-        <!-- jQuery first, then Tether, then Bootstrap JS. -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
-    </body>
+    </div>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        var interval = window.setInterval(flashy, 1200)
+
+        function flashy() {
+            $("#button-join").toggleClass("active")
+        }
+
+    </script>
+</body>
 
 </html>
